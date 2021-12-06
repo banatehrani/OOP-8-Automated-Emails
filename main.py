@@ -25,5 +25,8 @@ url = "https://newsapi.org/v2/everything?" \
       "apiKey=172a5c3a01724bbda2cb9ac2cf824816"
 
 response = requests.get(url)
-content = response.text
-pprint(content)
+content = response.json()  # The response is in json format and will be converted to dictionary
+x = content['articles'][2]['title']  # Title of the 3rd article
+y = content['articles'][2]['url']  # url of the 3rd article
+pprint(x)
+pprint(y)
