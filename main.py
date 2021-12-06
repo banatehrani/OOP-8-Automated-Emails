@@ -26,7 +26,15 @@ url = "https://newsapi.org/v2/everything?" \
 
 response = requests.get(url)
 content = response.json()  # The response is in json format and will be converted to dictionary
-x = content['articles'][2]['title']  # Title of the 3rd article
-y = content['articles'][2]['url']  # url of the 3rd article
-pprint(x)
-pprint(y)
+# x = content['articles'][2]['title']  # Title of the 3rd article
+# y = content['articles'][2]['url']  # url of the 3rd article
+# pprint(x)
+# pprint(y)
+
+articles = content['articles']
+
+email_body = ''
+for article in articles:
+    email_body = email_body + article['title'] + "\n" + article['url'] + "\n\n"
+
+print(email_body)
