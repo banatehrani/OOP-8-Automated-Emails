@@ -1,4 +1,5 @@
 import requests
+import datetime
 
 
 class NewsFeed:
@@ -31,8 +32,14 @@ class NewsFeed:
 
         return email_body
 
-# news_feed = NewsFeed(interest='nasa', from_date='2021-12-05', to_date='2021-12-06', language='en')
-# print(news_feed.get())
+
+if __name__ == "__main__":
+    news_feed = NewsFeed(interest='nasa',
+                         from_date=((datetime.datetime.now() -
+                                     datetime.timedelta(days=1)).strftime('%Y-%m-%d')),
+                         to_date=datetime.datetime.now().strftime('%Y-%m-%d'),
+                         language='en')
+    print(news_feed.get())
 
 # Here in the url we use everything end point then parameters are specified.
 # You can change the value of q in the url to look for another topic.
