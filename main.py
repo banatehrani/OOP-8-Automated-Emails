@@ -17,7 +17,7 @@ while True:
                                  from_date=yesterday,
                                  to_date=today)
 
-            yagmail.SMTP(user="mehdi.python.developer@gmail.com", password="mehdi_python_developer"). \
+            yagmail.SMTP(user="mehdi.python.developer@gmail.com", password="***"). \
                 send(to=row['email'],
                      subject=f"{row['interest']} news for today!",
                      contents=f"Hi {row['name']}\n See what's new about {row['interest']} "
